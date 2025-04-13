@@ -5,7 +5,7 @@ export const ListItems: ListItemsProps[] = [
     name: "Үйлчилгээ",
     items: [
       { id: 1, name: "hello" },
-      { id: 2, name: "sanhuu" },
+      { id: 2, name: "bye" },
     ],
   },
   {

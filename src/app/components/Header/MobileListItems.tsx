@@ -10,9 +10,9 @@ function MobileListItem({ items }: ListProps) {
     <motion.div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="flex flex-col gap-1 relative"
+      className="flex flex-col gap-4 relative"
     >
-      <motion.div className="hover:bg-slate-100 p-2 rounded">
+      <motion.div className="p-2">
         <div className=" gap-1  flex items-center  cursor-pointer">
           {items.name}{" "}
           {items.name !== "Бидний тухай" && (
@@ -28,10 +28,16 @@ function MobileListItem({ items }: ListProps) {
               transition={{ duration: 0.2 }}
             >
               {items.items.map((el) => (
-                <div key={el.id} className="flex flex-col">
-                  <a href="#" className="hover:bg-white hover:rounded-md pl-2">
+                <div key={el.id} className="flex flex-col border-b">
+                  <motion.a
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4 }}
+                    href="#"
+                    className=" pl-2 my-2"
+                  >
                     {el.name}
-                  </a>
+                  </motion.a>
                 </div>
               ))}
             </motion.div>

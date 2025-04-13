@@ -53,9 +53,9 @@ function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-6 right-0 bg-white border shadow-lg rounded-lg w-[250px] h-auto p-4 z-50"
+                  className="absolute top-15 right-4 bg-white border shadow-lg rounded-lg w-[250px] h-auto p-4 z-50"
                 >
-                  <div className="flex flex-col gap-1 text-black">
+                  <div className="flex flex-col gap-4 text-black">
                     {ListItems.map((items) => (
                       <MobileListItem
                         key={items.id}

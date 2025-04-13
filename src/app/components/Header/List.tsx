@@ -2,6 +2,7 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ListProps } from "@/app/constants/type";
+import Link from "next/link";
 function List({ items }: ListProps) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -24,9 +25,11 @@ function List({ items }: ListProps) {
               {items.items.map((el) => (
                 <div key={el.id} className="flex flex-col gap-1">
                   {" "}
-                  <a href="#" className="hover:bg-slate-100 p-2 rounded w-full">
+                  <Link
+                    href={`/components/navigation/${el.name.toLowerCase()}`}
+                  >
                     {el.name}
-                  </a>
+                  </Link>
                 </div>
               ))}
             </motion.div>
