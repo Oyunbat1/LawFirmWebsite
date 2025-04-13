@@ -26,12 +26,12 @@ function Navbar() {
           }}
           animate={{ opacity: 1, y: 0, backgroundColor: "rgba(255,255,255,1)" }}
           transition={{ duration: 0.4 }}
-          className="fixed  top-0 left-0 right-0 h-[80px] flex justify-between pl-4 pr-4 items-center"
+          className="fixed  top-0 left-0 right-0 h-[80px] flex justify-between pl-8 pr-8 items-center"
         >
           <Image
             src="/logo.webp"
-            width={50}
-            height={50}
+            width={56}
+            height={56}
             alt="logo"
             className="cursor-pointer"
           />
@@ -41,7 +41,7 @@ function Navbar() {
             onMouseLeave={() => setIsMenuOpen(false)}
             className="relative"
           >
-            {isMenuOpen ? <X /> : <Menu />}
+            {isMenuOpen ? <X /> : <Menu className="w-[60px] h-[40px]" />}
             <AnimatePresence>
               {isMenuOpen && (
                 <motion.div
