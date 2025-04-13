@@ -20,12 +20,16 @@ function List({ items }: ListProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-[60px]  bg-white border shadow-lg rounded-lg w-[250px] p-4 z-50 flex flex-col"
+              className="absolute top-[70px]  bg-white border shadow-lg rounded-lg w-[250px] p-4 z-50 flex flex-col"
             >
               {items.items.map((el) => (
-                <div key={el.id} className="flex flex-col gap-1">
+                <div
+                  key={el.id}
+                  className="flex flex-col gap-1 border-b rounded-md"
+                >
                   {" "}
                   <Link
+                    className="hover:bg-slate-200 rounded-md pl-2"
                     href={`/components/navigation/${el.name.toLowerCase()}`}
                   >
                     {el.name}

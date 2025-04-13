@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ListProps } from "@/app/constants/type";
+import Link from "next/link";
 function MobileListItem({ items }: ListProps) {
   const [hovered, setHovered] = useState(false);
 
@@ -28,16 +29,22 @@ function MobileListItem({ items }: ListProps) {
               transition={{ duration: 0.2 }}
             >
               {items.items.map((el) => (
-                <div key={el.id} className="flex flex-col border-b">
-                  <motion.a
+                <div
+                  key={el.id}
+                  className="flex flex-col border-b rounded-md w-[220px] "
+                >
+                  <motion.div
                     initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4 }}
-                    href="#"
-                    className=" pl-2 my-2"
+                    className=" hover:bg-slate-200 w-[220px] rounded-md pl-2"
                   >
-                    {el.name}
-                  </motion.a>
+                    <Link
+                      href={`/components/navigation/${el.name.toLowerCase()}`}
+                    >
+                      {el.name}
+                    </Link>
+                  </motion.div>
                 </div>
               ))}
             </motion.div>
