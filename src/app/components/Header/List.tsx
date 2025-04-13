@@ -13,7 +13,7 @@ function List({ items }: ListProps) {
       >
         {!hovered ? <p>{items.name}</p> : <p>{items.name}</p>}
         <AnimatePresence>
-          {hovered && (
+          {hovered && items.name !== "Бидний тухай" && (
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}

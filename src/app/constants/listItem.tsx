@@ -11,15 +11,11 @@ export const ListItems: ListItemsProps[] = [
   {
     id: 2,
     name: "Бидний тухай",
-    items: [
-      { id: 1, name: "a" },
-      { id: 2, name: "b" },
-      { id: 3, name: "c" },
-    ],
+    items: [],
   },
   {
     id: 3,
-    name: "Холбоо барих",
+    name: "Мэдээ",
     items: [{ id: 1, name: "a" }],
   },
   {

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import List from "./List";
 import { ListItems } from "@/app/constants/listItem";
-
+import MobileListItem from "./MobileListItems";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -16,9 +16,18 @@ function Navbar() {
   }, [isMobileQuery]);
 
   return (
-    <div className="sm:bg-amber-400 md:bg-red-400 lg:bg-blue-400 xl:bg-green-400">
+    <div>
       {isMobile && (
-        <div className="fixed top-0 left-0 right-0 h-[80px] flex justify-between pl-4 pr-4 items-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: -30,
+            backgroundColor: "rgba(255,255,255,0)",
+          }}
+          animate={{ opacity: 1, y: 0, backgroundColor: "rgba(255,255,255,1)" }}
+          transition={{ duration: 0.4 }}
+          className="fixed  top-0 left-0 right-0 h-[80px] flex justify-between pl-4 pr-4 items-center"
+        >
           <Image
             src="/logo.webp"
             width={50}
@@ -40,31 +49,36 @@ function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-12 right-0 bg-white border shadow-lg rounded-lg w-[250px] p-4 z-50"
+                  className="absolute top-6 right-0 bg-white border shadow-lg rounded-lg w-[250px] h-auto p-4 z-50"
                 >
-                  <div className="flex flex-col gap-4 text-black">
-                    <a href="#" className="hover:bg-slate-100 p-2 rounded">
-                      Үйлчилгээ
-                    </a>
-                    <a href="#" className="hover:bg-slate-100 p-2 rounded">
-                      Бидний тухай
-                    </a>
-                    <a href="#" className="hover:bg-slate-100 p-2 rounded">
-                      Мэдээ
-                    </a>
-                    <a href="#" className="hover:bg-slate-100 p-2 rounded">
-                      Холбоо барих
-                    </a>
+                  <div className="flex flex-col gap-1 text-black">
+                    {ListItems.map((items) => (
+                      <MobileListItem
+                        key={items.id}
+                        items={items}
+                        isMenuOpen={isMenuOpen}
+                        setMenuIsOpen={setIsMenuOpen}
+                      />
+                    ))}
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-        </div>
+        </motion.div>
       )}
 
       {!isMobile && (
-        <div className="flex justify-around items-center h-[70px]">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: -30,
+            backgroundColor: "rgba(255,255,255,0)",
+          }}
+          animate={{ opacity: 1, y: 0, backgroundColor: "rgba(255,255,255,1)" }}
+          transition={{ duration: 0.4 }}
+          className="  fixed  left-0 right-0 flex justify-around items-center h-[70px]"
+        >
           <Image src="/logo.webp" width={50} height={50} alt="logo" />
           <nav>
             <ul className="flex gap-4 lg:gap-8 xl:gap-12">
@@ -84,7 +98,7 @@ function Navbar() {
             <Instagram className="w-[18px]" />
             <Mail className="w-[18px]" />
           </div>
-        </div>
+        </motion.div>
       )}
     </div>
   );
