@@ -38,12 +38,7 @@ function Navbar() {
             className="cursor-pointer"
           />
 
-          <div
-            onMouseEnter={() => setIsMenuOpen(true)}
-            onMouseLeave={() => setIsMenuOpen(false)}
-            onClick={toggleMenu}
-            className="relative"
-          >
+          <div onClick={toggleMenu} className="relative">
             {isMenuOpen ? (
               <X className="w-[60px] h-[40px]" />
             ) : (
