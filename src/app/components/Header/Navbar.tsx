@@ -41,7 +41,11 @@ function Navbar() {
             onMouseLeave={() => setIsMenuOpen(false)}
             className="relative"
           >
-            {isMenuOpen ? <X /> : <Menu className="w-[60px] h-[40px]" />}
+            {isMenuOpen ? (
+              <X className="w-[60px] h-[40px]" />
+            ) : (
+              <Menu className="w-[60px] h-[40px]" />
+            )}
             <AnimatePresence>
               {isMenuOpen && (
                 <motion.div
