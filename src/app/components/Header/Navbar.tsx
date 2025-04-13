@@ -14,7 +14,9 @@ function Navbar() {
   useEffect(() => {
     setIsMobile(isMobileQuery);
   }, [isMobileQuery]);
-
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <div>
       {isMobile && (
@@ -39,6 +41,7 @@ function Navbar() {
           <div
             onMouseEnter={() => setIsMenuOpen(true)}
             onMouseLeave={() => setIsMenuOpen(false)}
+            onClick={toggleMenu}
             className="relative"
           >
             {isMenuOpen ? (
