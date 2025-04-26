@@ -18,7 +18,7 @@ function Info() {
         transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="w-[428px] h-[85px] sm:w-[530px] lg:text-[22px] lg:h-[50px] lg:w-[880px] xl:w-[1200px]"
+        className="w-[348px] h-[85px] sm:w-[530px] lg:text-[22px] lg:h-[50px] lg:w-[880px] xl:w-[1200px]"
       >
         Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit
         nunc in eros scelerisque sed. Commodo in viverra nunc, ullamcorper ut.
@@ -31,7 +31,7 @@ function Info() {
         transition={{ duration: 2, delay: 0.4, ease: "easeInOut" }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, amount: 0.5 }}
-        className="grid grid-cols-2 gap-5 mt-8  lg:mt-[100px]"
+        className="grid grid-cols-2 gap-5 mt-14  lg:mt-[100px]"
       >
         <div className="w-[172px] sm:w-[192px] h-[48px] xl:w-[302px] xl:h-[80px] sm:h-[58px] bg-slate-500 flex items-center justify-center gap-4">
           <div className="w-[30px] h-[30px] bg-white"></div>
