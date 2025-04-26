@@ -8,4 +8,5 @@ export type ListItemsProps = {
   id: number | null | undefined;
   name: String;
   items: { id: number; name: string }[];
+  navigation: String;
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Section2() {
+function Info() {
   return (
     <div className="h-auto  w-screen border-t-gray-400 border-t-2 flex flex-col gap-[40px] items-center justify-center pb-[100px]">
       <h1 className="pt-[40px] text-[20px] font-[700] w-[335px] h-[22px] sm:text-[26px] sm:w-[430px] lg:text-[42px] lg:w-[980px] lg:text-center lg:my-[20px] xl:mb-[40px] ">
@@ -47,4 +47,4 @@ function Section2() {
   );
 }
 
-export default Section2;
+export default Info;

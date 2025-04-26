@@ -2,7 +2,7 @@ import React from "react";
 
 function Section4() {
   return (
-    <div className="w-screen h-auto flex flex-col items-center justify-center gap-10 md:gap-16 pb-[80px] md:bg-amber-200 lg:bg-green-200 xl:bg-red-200 sm:bg-purple-300">
+    <div className="w-screen h-auto flex flex-col items-center justify-center gap-10 md:gap-16 pb-[80px]  s">
       <div className="flex flex-col xl:gap-18 gap-10 xl:justify-center xl:items-center">
         <h1 className="w-[337px] h-[45px] text-[24px] font-[700] text-center md:text-[34px] md:w-[537px] xl:text-[60px] xl:w-screen">
           Lorem Ipsum is simply dummy

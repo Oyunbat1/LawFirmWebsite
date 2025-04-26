@@ -23,7 +23,7 @@ function Navbar() {
 
   const handleScroll = () => {
     console.log("scrolling...", window.scrollY);
-    setScrolled(window.scrollY > 50);
+    setScrolled(window.scrollY > 20);
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -69,7 +69,7 @@ function Navbar() {
                   className="relative"
                 >
                   <Link
-                    href="#"
+                    href={`${item.navigation}`}
                     className={`inline-block transition-colors duration-300 ${
                       scrolled ? "text-white" : "text-black"
                     } relative group`}
@@ -102,7 +102,8 @@ function Navbar() {
                 <div key={items.id}>
                   <li>
                     <Link
-                      href={"#"}
+                      href={`${items.navigation}`}
+                      scroll={true}
                       className={`inline-block transition-colors duration-300 ${
                         scrolled ? "text-white" : "text-black"
                       } relative group`}

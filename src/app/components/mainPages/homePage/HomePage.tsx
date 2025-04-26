@@ -20,7 +20,7 @@ function HomePage() {
           Unlock your design skills to create beautiful websites and apps with a
           poweful and easy-to-use tool.
         </p>
-        <Button className="w-[137px] h-[44px] xl:w-[228px] xl:h-[56px]  lg:w-[228px] lg:h-[56px] ">
+        <Button className="w-[137px] h-[44px] xl:w-[228px] xl:h-[56px]  lg:w-[228px] lg:h-[56px] bg-black text-white ">
           Холбогдох
         </Button>
       </div>
