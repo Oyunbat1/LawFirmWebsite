@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ListItems } from "@/app/constants/listItem";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   Sheet,
@@ -20,7 +21,10 @@ function Navbar() {
   const isMobileQuery = useMediaQuery({ maxWidth: 639 });
   const [scrolled, setScrolled] = useState(false);
   const [hoveredItemId, setHoveredItemId] = useState<number | null>(null);
-
+  const router = useRouter();
+  const handleToMainPage = () => {
+    router.push("/");
+  };
   const handleScroll = () => {
     console.log("scrolling...", window.scrollY);
     setScrolled(window.scrollY > 20);
@@ -95,7 +99,13 @@ function Navbar() {
             scrolled ? "bg-gray-500/40" : "bg-white/20"
           }`}
         >
-          <Image src="/logo.webp" width={50} height={50} alt="logo" />
+          <Image
+            src="/logo.webp"
+            width={50}
+            height={50}
+            alt="logo"
+            onClick={handleToMainPage}
+          />
           <nav>
             <ul className="flex gap-4 lg:gap-8 xl:gap-12">
               {ListItems.map((items) => (
