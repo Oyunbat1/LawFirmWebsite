@@ -1,61 +1,37 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-interface ServiceProps {
-  id?: string;
-}
+import { sectionThreeData } from "@/app/constants/serviceItems";
+import Employee from "@/app/components/mainPages/employees/Employee";
+import { useParams } from "next/navigation";
+import Footer from "@/app/components/mainPages/footer/Footer";
 
-const sectionThreeData = [
-  {
-    id: 1,
-    url: "/service/img1.webp",
-    logoUrl: "/service/jinluur.webp",
-    navigation: "/navigation/first",
-  },
-  {
-    id: 2,
-    url: "/service/img2.webp",
-    logoUrl: "/service/pen.webp",
-    navigation: "/navigation/second",
-  },
-  {
-    id: 3,
-    url: "/service/img3.webp",
-    logoUrl: "/service/alpha.webp",
-    navigation: "/navigation/third",
-  },
-  {
-    id: 4,
-    url: "/service/img4.webp",
-    logoUrl: "/service/book.webp",
-    navigation: "/navigation/fourth",
-  },
-  {
-    id: 5,
-    url: "/service/img5.webp",
-    logoUrl: "/service/bag.webp",
-    navigation: "/navigation/fifth",
-  },
-  {
-    id: 6,
-    url: "/service/img6.webp",
-    logoUrl: "/service/task.webp",
-    navigation: "/navigation/sixth",
-  },
-];
+export default function Page() {
+  const { serviceID } = useParams();
+  const id = Number(serviceID);
+  const selectedItem = sectionThreeData.find((item) => item.id === id);
 
-function Service({ id }: ServiceProps) {
   return (
-    <div id={id}>
+    <div className="flex flex-col items-center justify-center ">
+      <div className="h-screen w-screen pt-[300px] px-[60px]">
+        {selectedItem?.content && (
+          <div>
+            <div className="text-5xl text-center text-black">
+              {selectedItem?.id}
+            </div>
+            <p> {selectedItem.content}</p>
+          </div>
+        )}
+      </div>
       <div className="w-screen mt-[180px] pb-[100px] flex flex-wrap px-[20px] md:px-[60px] border-t-2 border-t-gray-400 pt-[60px]  xl:justify-center">
         {sectionThreeData.map((items) => (
           <div
             key={items.id}
             className="w-1/2 lg:w-1/3 xl:w-[392px]  xl:h-[300px]  h-[180px] flex justify-center items-center relative group overflow-hidden  
-          "
+                    "
           >
-            <Link className="block w-full h-full" href={`${items.navigation}`}>
-              {" "}
+            <Link className="block w-full h-full" href={`/service/${items.id}`}>
               <Image
                 width={180}
                 height={180}
@@ -71,8 +47,8 @@ function Service({ id }: ServiceProps) {
           </div>
         ))}
       </div>
+      <Employee />
+      <Footer />
     </div>
   );
 }
-
-export default Service;

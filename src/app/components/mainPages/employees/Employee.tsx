@@ -8,7 +8,7 @@ function Employee({ id }: EmployeeProps) {
   return (
     <div id={id}>
       <div
-        className="bg-slate-200 h-auto w-screen px-[40px] flex flex-col items-center justify-center gap-8 pb-[120px]
+        className="bg-gray-200 h-auto w-screen px-[40px] flex flex-col items-center justify-center gap-8 pb-[120px]
     pt-[20px]"
       >
         <div className="flex flex-col items-center justify-center gap-2">

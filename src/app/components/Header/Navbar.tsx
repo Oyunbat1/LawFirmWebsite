@@ -73,7 +73,7 @@ function Navbar() {
                   className="relative"
                 >
                   <Link
-                    href={`${item.navigation}`}
+                    href={`/${item.navigation}`}
                     className={`inline-block transition-colors duration-300 ${
                       scrolled ? "text-white" : "text-black"
                     } relative group`}
