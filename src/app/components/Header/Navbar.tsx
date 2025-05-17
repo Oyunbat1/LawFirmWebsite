@@ -26,7 +26,6 @@ function Navbar() {
     router.push("/");
   };
   const handleScroll = () => {
-    console.log("scrolling...", window.scrollY);
     setScrolled(window.scrollY > 20);
   };
   useEffect(() => {
@@ -53,8 +52,8 @@ function Navbar() {
         >
           <Image
             src="/logo.webp"
-            width={56}
-            height={56}
+            width={86}
+            height={86}
             alt="logo"
             className="cursor-pointer"
           />
@@ -96,15 +95,16 @@ function Navbar() {
           animate={{ y: 0 }}
           transition={{ duration: 0.4 }}
           className={`fixed left-0 right-0 flex z-50 justify-around items-center h-[70px] transition-colors duration-500 backdrop-blur-md ${
-            scrolled ? "bg-gray-500/40" : "bg-white/20"
+            scrolled ? "bg-gray-500/30" : "bg-slate-800/80"
           }`}
         >
           <Image
             src="/logo.webp"
-            width={50}
-            height={50}
+            width={106}
+            height={106}
             alt="logo"
             onClick={handleToMainPage}
+            className="text-white"
           />
           <nav>
             <ul className="flex gap-4 lg:gap-8 xl:gap-12">
@@ -115,7 +115,7 @@ function Navbar() {
                       href={`${items.navigation}`}
                       scroll={true}
                       className={`inline-block transition-colors duration-300 ${
-                        scrolled ? "text-white" : "text-black"
+                        scrolled ? "text-black" : "text-white"
                       } relative group`}
                     >
                       {" "}
@@ -129,7 +129,7 @@ function Navbar() {
           </nav>
           <div
             className={`flex gap-2 lg:gap-8 transition-colors duration-300 ${
-              scrolled ? "text-white" : "text-black"
+              scrolled ? "text-black" : "text-white"
             }`}
           >
             <Facebook className="w-[18px]" />
