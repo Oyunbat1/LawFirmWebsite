@@ -23,7 +23,7 @@ export default function Page() {
             {filteredItems.map((items) => (
               <div
                 key={items.id}
-                className={`border h-auto w-auto px-2 py-0.5 lg:py-2.5 border-black rounded-md  m-2 hover:bg-black  transition-all duration-1000 flex items-center justify-center text-center ${
+                className={`border h-auto w-auto px-2 py-0.5 lg:py-2.5 border-black rounded-md text-[12px] m-2 hover:bg-black  transition-all duration-1000 flex items-center justify-center text-center ${
                   selectedId === items.id
                     ? "bg-black text-white"
                     : "bg-white text-black"
