@@ -20,7 +20,7 @@ function Employee({ id }: EmployeeProps) {
             amet at molestie mattis.
           </p>
         </div>
-        <div className="w-[300px] h-[300px] bg-red-600 rounded-md">Зураг</div>
+        <div className="w-[300px] h-[300px] bg-white rounded-md">Зураг</div>
         <div className="flex flex-col gap-4 items-center">
           <h1 className=" md:text-[20px] xl:text-[28px] font-[600]">Нэр</h1>
           <p>Мэргэжил</p>

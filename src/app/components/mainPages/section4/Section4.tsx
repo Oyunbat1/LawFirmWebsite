@@ -9,10 +9,10 @@ function Section4() {
         <h1 className="w-[337px] h-[45px] text-[24px] font-[700] text-center md:text-[34px] md:w-[537px] xl:text-[60px] xl:w-screen">
           Бидний эрхэм зорилго
         </h1>
-        <p className="text-[#8CA2C0] w-[358px] h-[42px] text-[12px] font-[400] md:w-[537px] md:text-[18px] xl:w-[1000px] xl:text-[20px]">
-          Welcome to Burger Bliss, where we take your cravings to a whole new
-          level! Our mouthwatering burgers are made from 100% beef and are
-          served on freshly baked buns.
+        <p className="text-black w-[358px] h-[42px] text-[12px] font-[400] md:w-[537px] md:text-[18px] xl:w-[1000px] xl:text-[20px]">
+          Монгол Улсад засгийн бүх эрх ард түмний мэдэлд байна. Монголын ард
+          түмэн төрийн үйл хэрэгт шууд оролцож, мөн сонгож байгуулсан төрийн эрх
+          барих төлөөлөгчдийн байгууллагаараа уламжлан энэхүү эрхээ эдэлнэ.
         </p>
       </div>
       <div className="flex flex-col gap-4 md:flex-row ">

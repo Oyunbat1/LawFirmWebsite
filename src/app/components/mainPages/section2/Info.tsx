@@ -20,11 +20,9 @@ function Info() {
         viewport={{ once: true, amount: 0.5 }}
         className="w-[348px] h-[85px] mt-[20px] sm:w-[530px] lg:text-[22px] lg:h-[50px] lg:w-[880px] xl:w-[1200px]"
       >
-        Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit
-        nunc in eros scelerisque sed. Commodo in viverra nunc, ullamcorper ut.
-        Non, amet, aliquet scelerisque nullam sagittis, pulvinar. Fermentum
-        scelerisque sit consectetur hac mi. Mollis leo eleifend ultricies purus
-        iaculis.
+        Монгол Улсад засгийн бүх эрх ард түмний мэдэлд байна. Монголын ард түмэн
+        төрийн үйл хэрэгт шууд оролцож, мөн сонгож байгуулсан төрийн эрх барих
+        төлөөлөгчдийн байгууллагаараа уламжлан энэхүү эрхээ эдэлнэ.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
