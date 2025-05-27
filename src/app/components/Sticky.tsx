@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Share2, Facebook, Instagram, Twitter } from "lucide-react";
 
 function Sticky() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   return (
     <div className="fixed z-50 bottom-20 right-10 md:right-14 xl:right-24">
