@@ -30,7 +30,7 @@ function Employee({ id }: EmployeeProps) {
             <Instagram></Instagram>
             <Facebook></Facebook>
           </div>
-          <Button className="bg-white border-1 border-blue-600 text-blue-600 hover:bg-blue-200">
+          <Button className=" border-1 border-[#ad935c] text-[#ad935c] hover:bg-[#ad935c]">
             Холбоо барих
           </Button>
         </div>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { sectionThreeData } from "@/app/constants/serviceItems";
@@ -7,83 +7,137 @@ import { filteredItems } from "@/app/constants/filterItems";
 import Employee from "@/app/components/mainPages/employees/Employee";
 import { useParams } from "next/navigation";
 import Footer from "@/app/components/mainPages/footer/Footer";
-import CursorMaskWrapper from "@/app/components/CursorWrapper";
+import { motion, AnimatePresence } from "framer-motion";
+
 export default function Page() {
   const { serviceID } = useParams();
   const id = Number(serviceID);
   const selectedItem = filteredItems.find((item) => item.id === id);
   const [selectedId, setSelectedId] = useState<number | null>(id);
+  const [isHovered, setIsHovered] = useState<number | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [selectedId]);
+
   return (
-    <div className="min-h-screen w-screen flex flex-col">
-      <div className=" w-screen pt-[100px] flex flex-col gap-2 lg:flex-row lg:gap-0 lg:justify-center ">
-        <div className="mx-auto bg-gray-200 top-[100px] w-[360px] md:w-[610px] lg:w-[320px] lg:h-fit  pb-2 h-fit p-4  rounded-md text-center">
-          <h1 className="text-[22px] border-b-2 py-2 mx-3">Эрх зүйн төрлүүд</h1>
-          <div className="grid grid-cols-3 lg:grid-cols-1">
-            {" "}
-            {filteredItems.map((items) => (
-              <div
-                key={items.id}
-                className={`border h-auto w-auto px-2 py-0.5 lg:py-2.5 border-black rounded-md text-[12px] m-2 hover:bg-black  transition-all duration-1000 flex items-center justify-center text-center ${
-                  selectedId === items.id
-                    ? "bg-black text-white"
-                    : "bg-white text-black"
-                }`}
+    <div className="min-h-screen w-screen flex flex-col bg-gray-50">
+      <div className="w-screen pt-[100px] flex flex-col gap-6 lg:flex-row lg:gap-8 lg:justify-center px-4 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
+          className="bg-white shadow-lg rounded-xl lg:sticky lg:top-[120px] h-fit p-6 lg:w-[320px]"
+        >
+          <h1 className="text-2xl font-bold pb-4 border-b border-gray-200 text-gray-800">
+            Эрх зүйн төрлүүд
+          </h1>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-3 mt-4">
+            {filteredItems.map((item) => (
+              <motion.div
+                key={item.id}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onHoverStart={() => setIsHovered(item.id)}
+                onHoverEnd={() => setIsHovered(null)}
               >
                 <Link
-                  className={`block w-full h-fit justify-center items-center text-[12px]${
-                    selectedId === items.id ? " text-white" : "text-black"
-                  } hover:text-white`}
-                  href={`/service/${items.id}`}
+                  href={`/service/${item.id}`}
+                  className={`block w-full h-full transition-all duration-300 rounded-lg p-3 text-center text-sm font-medium
+                    ${
+                      selectedId === item.id
+                        ? "bg-black text-white shadow-md"
+                        : "bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-black"
+                    }
+                    ${
+                      isHovered === item.id && selectedId !== item.id
+                        ? "ring-2 ring-gray-400"
+                        : ""
+                    }
+                  `}
                 >
-                  {items.title}
+                  {item.title}
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-        {selectedItem?.title && (
-          <div
-            key={selectedItem.id}
-            className="mx-auto bg-gray-200 w-[360px] md:w-[610px] lg:w-[700px] xl:w-[880px] h-auto pb-8 rounded-md   flex flex-col items-center gap-2 pt-[20px]"
-          >
-            <div className="flex flex-col justify-center items-center gap-2 mb-6">
-              {" "}
-              <h1 className="text-3xl font-bold w-[300px] md:w-[540px] lg:w-[600px] xl:w-[700px]">
-                {selectedItem.title}
-              </h1>
-              <p className="w-[320px] md:w-[540px] lg:w-[600px] xl:w-[700px]">
-                {selectedItem.paragraph}
-              </p>{" "}
-            </div>
-            {selectedItem.content?.map((item) => (
-              <div
-                key={item.id}
-                className="w-[300px] md:w-[540px] lg:w-[600px] xl:w-[700px] mb-2"
-              >
-                <h1 className="text-xl font-bold">{item.title}</h1>
-                <ul className="list-disc list-inside text-black mt-4">
-                  {item.first_rules?.map((list) => (
-                    <li key={list.id}>{list.rule1}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            {selectedItem.content?.map((item) =>
-              "second_rules" in item && Array.isArray(item.second_rules) ? (
-                <div
-                  key={item.id}
-                  className="w-[320px] md:w-[540px] lg:w-[600px] xl:w-[700px]"
-                >
-                  <ul className=" list-disc list-inside text-black">
-                    {item.second_rules.map((list, index) => (
-                      <li key={index}>{list.rule1}</li>
-                    ))}
-                  </ul>
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          {selectedItem?.title && (
+            <motion.div
+              key={selectedItem.id}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white shadow-lg rounded-xl w-full max-w-4xl p-6 lg:p-8"
+            >
+              <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
+                  <motion.h1
+                    className="text-3xl font-bold text-gray-800"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.1 }}
+                  >
+                    {selectedItem.title}
+                  </motion.h1>
+                  <motion.p
+                    className="text-gray-600 leading-relaxed"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    {selectedItem.paragraph}
+                  </motion.p>
                 </div>
-              ) : null
-            )}
-          </div>
-        )}
+
+                {selectedItem.content?.map((item, index) => (
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    className="flex flex-col gap-4"
+                  >
+                    <h2 className="text-xl font-semibold text-black">
+                      {item.title}
+                    </h2>
+                    <ul className="space-y-2">
+                      {item.first_rules?.map((list) => (
+                        <motion.li
+                          key={list.id}
+                          className="flex items-start gap-2 text-gray-700"
+                          whileHover={{ x: 5 }}
+                        >
+                          <span className="text-black mt-1">•</span>
+                          <span>{list.rule1}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    {"second_rules" in item &&
+                      Array.isArray(item.second_rules) && (
+                        <ul className="space-y-2 mt-2">
+                          {item.second_rules.map((list, idx) => (
+                            <motion.li
+                              key={idx}
+                              className="flex items-start gap-2 text-gray-700"
+                              whileHover={{ x: 5 }}
+                            >
+                              <span className="text-black mt-1">•</span>
+                              <span>{list.rule1}</span>
+                            </motion.li>
+                          ))}
+                        </ul>
+                      )}
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <Footer />

@@ -65,7 +65,7 @@ function HomePage({ setMaskEnabled }: HomePageProps) {
         <div className="h-full w-full flex flex-col items-center text-black text-[34px] leading-snug cursor-default bg-white pt-[100px] sm:pr-[160px] sm:pt-[130px] md:pr-[320px] xl:pr-[600px]">
           <div>
             <h1 className="w-[300px] text-[24px] font-bold sm:w-[400px] sm:text-[36px] md:w-[460px] lg:w-[520px] lg:text-[52px] xl:w-[568px] xl:text-[54px]">
-              Та өөрийнхөө <span className="text-blue-600">хуулийн</span>{" "}
+              Та өөрийнхөө <span className="text-[#BEA673]">хуулийн</span>{" "}
               үйлчилгээг бидэнд даатга
             </h1>
             <p className="text-[16px] w-[300px] mt-[10px] sm:text-[18px]">
@@ -77,7 +77,7 @@ function HomePage({ setMaskEnabled }: HomePageProps) {
       </div>
 
       <div className="absolute top-[200px] z-30 left-1/2 transform -translate-x-36 translate-y-16 sm:top-[290px] sm:-translate-x-68 md:-translate-x-95 md:top-[266px] lg:top-[366px] lg:-translate-x-103 xl:top-[396px] xl:-translate-x-144">
-        <Button className="w-[137px] h-[44px] xl:w-[228px] xl:h-[56px] lg:w-[228px] lg:h-[56px] bg-[#BEA673] text-white cursor-pointer">
+        <Button className="w-[137px] h-[44px] xl:w-[228px] xl:h-[56px] lg:w-[228px] lg:h-[56px] bg-[#BEA673] hover:bg-[#ad935c]  text-white cursor-pointer">
           Холбогдох <ChevronRight className="text-white" />
         </Button>
       </div>

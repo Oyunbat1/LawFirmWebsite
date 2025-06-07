@@ -40,7 +40,7 @@ function Navbar() {
           animate={{ y: 0 }}
           transition={{ duration: 0.4 }}
           className={`fixed  z-50 top-0 left-0 right-0 h-[80px] flex justify-between pl-8 pr-8 items-center transition-colors duration-500 backdrop-blur-md  ${
-            scrolled ? "bg-slate-500/60" : "bg-slate-500/20"
+            scrolled ? "bg-gray-500/30" : "bg-slate-800/80"
           }`}
         >
           <Image
@@ -52,9 +52,9 @@ function Navbar() {
           />
           <Sheet>
             <SheetTrigger>
-              <Menu className="cursor-pointer" />
+              <Menu className="cursor-pointer text-white" />
             </SheetTrigger>
-            <SheetContent className="flex  justify-start items-center pt-[120px]">
+            <SheetContent className="flex justify-start items-center pt-[120px] bg-slate-800/80">
               {ListItems.map((item) => (
                 <div
                   key={item.id}
@@ -66,14 +66,15 @@ function Navbar() {
                 >
                   <Link
                     href={`/${item.navigation}`}
-                    className={`inline-block transition-colors duration-300 ${
-                      scrolled ? "text-white" : "text-black"
-                    } relative group`}
+                    className={`inline-block transition-colors duration-300 
+                     relative group`}
                   >
                     <div>
-                      <p className="py-2 cursor-pointer">{item.name}</p>
+                      <p className="py-2 cursor-pointer text-white">
+                        {item.name}
+                      </p>
                     </div>
-                    <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 </div>
               ))}
@@ -113,7 +114,11 @@ function Navbar() {
                     >
                       {" "}
                       {items.name}
-                      <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                      <span
+                        className={`absolute left-0 -bottom-0.5 w-0 h-0.5 ${
+                          scrolled ? "bg-black" : "bg-white"
+                        } transition-all duration-300 group-hover:w-full`}
+                      ></span>
                     </Link>
                   </li>
                 </div>
@@ -125,9 +130,27 @@ function Navbar() {
               scrolled ? "text-black" : "text-white"
             }`}
           >
-            <Facebook className="w-[18px]" />
-            <Instagram className="w-[18px]" />
-            <Mail className="w-[18px]" />
+            <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
+              {" "}
+              <a href="https://www.facebook.com/facebook/">
+                {" "}
+                <Facebook className="w-[18px]" />
+              </a>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
+              {" "}
+              <a href="https://www.instagram.com/">
+                {" "}
+                <Instagram className="w-[18px]" />
+              </a>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
+              {" "}
+              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
+                {" "}
+                <Mail className="w-[18px]" />
+              </a>
+            </motion.div>
           </div>
         </motion.div>
       )}
