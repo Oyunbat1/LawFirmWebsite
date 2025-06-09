@@ -6,7 +6,7 @@ function Section4() {
   return (
     <div className="w-screen h-auto flex flex-col items-center justify-center gap-10 md:gap-16 pb-[80px]  s">
       <div className="flex flex-col xl:gap-18 gap-4 xl:justify-center xl:items-center">
-        <h1 className="w-[337px] h-[45px] text-[24px] font-[700] text-center md:text-[34px] md:w-[537px] xl:text-[60px] xl:w-screen">
+        <h1 className="w-[337px] h-[45px] text-[24px] font-[700] text-center md:text-[34px] md:w-[537px] xl:text-[42px] xl:w-screen">
           Бидний эрхэм зорилго
         </h1>
         <p className="text-black w-[358px] h-[42px] text-[12px] font-[400] md:w-[537px] md:text-[18px] xl:w-[1000px] xl:text-[22px] pb-[80px]">

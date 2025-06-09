@@ -40,7 +40,7 @@ function Navbar() {
           animate={{ y: 0 }}
           transition={{ duration: 0.4 }}
           className={`fixed  z-50 top-0 left-0 right-0 h-[80px] flex justify-between pl-8 pr-8 items-center transition-colors duration-500 backdrop-blur-md  ${
-            scrolled ? "bg-gray-500/30" : "bg-slate-800/80"
+            scrolled ? "bg-gray-300/30" : "bg-slate-200/40"
           }`}
         >
           <Image
@@ -52,9 +52,9 @@ function Navbar() {
           />
           <Sheet>
             <SheetTrigger>
-              <Menu className="cursor-pointer text-white" />
+              <Menu className="cursor-pointer text-black" />
             </SheetTrigger>
-            <SheetContent className="flex justify-start items-center pt-[120px] bg-slate-800/80">
+            <SheetContent className="flex justify-start items-center pt-[120px] bg-gray-100/30">
               {ListItems.map((item) => (
                 <div
                   key={item.id}
@@ -70,11 +70,11 @@ function Navbar() {
                      relative group`}
                   >
                     <div>
-                      <p className="py-2 cursor-pointer text-white">
+                      <p className="py-2 cursor-pointer text-black">
                         {item.name}
                       </p>
                     </div>
-                    <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute left-0 -bottom-0.5 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 </div>
               ))}
@@ -89,7 +89,7 @@ function Navbar() {
           animate={{ y: 0 }}
           transition={{ duration: 0.4 }}
           className={`fixed left-0 right-0 flex z-50 justify-around items-center h-[70px] transition-colors duration-500 backdrop-blur-md ${
-            scrolled ? "bg-gray-500/30" : "bg-slate-800/80"
+            scrolled ? "bg-gray-300/30" : "bg-slate-200/40"
           }`}
         >
           <Image
@@ -109,14 +109,14 @@ function Navbar() {
                       href={`${items.navigation}`}
                       scroll={true}
                       className={`inline-block transition-colors duration-300 ${
-                        scrolled ? "text-black" : "text-white"
+                        scrolled ? "text-black" : "text-black"
                       } relative group`}
                     >
                       {" "}
                       {items.name}
                       <span
                         className={`absolute left-0 -bottom-0.5 w-0 h-0.5 ${
-                          scrolled ? "bg-black" : "bg-white"
+                          scrolled ? "bg-black" : "bg-black"
                         } transition-all duration-300 group-hover:w-full`}
                       ></span>
                     </Link>
@@ -127,7 +127,7 @@ function Navbar() {
           </nav>
           <div
             className={`flex gap-2 lg:gap-8 transition-colors duration-300 ${
-              scrolled ? "text-black" : "text-white"
+              scrolled ? "text-black" : "text-black"
             }`}
           >
             <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
