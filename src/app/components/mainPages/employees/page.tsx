@@ -1,14 +1,13 @@
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-interface EmployeeProps {
-  id?: string;
-}
-function Employee({ id }: EmployeeProps) {
+
+function Employee() {
   return (
-    <div id={id}>
+    <div>
       <div
         className="bg-gray-100 h-auto w-screen px-[40px] flex flex-col items-center justify-center gap-8 pb-[120px] pt-[100px]
       "
@@ -25,7 +24,7 @@ function Employee({ id }: EmployeeProps) {
         <div className="flex flex-col gap-2">
           {" "}
           <Image
-            src="/oyunbat.jpg"
+            src="/employees/oyunbat.jpg"
             width={100}
             height={100}
             alt="logo"

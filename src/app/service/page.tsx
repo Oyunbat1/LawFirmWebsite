@@ -1,13 +1,19 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { sectionThreeData } from "../constants/serviceItems";
 import ServiceComponents from "./serviceComponents/ServiceComponents";
-interface ServiceProps {
-  id?: string;
+
+interface PageProps {
+  params?: {
+    id?: string;
+  };
+  searchParams?: Record<string, string | string[] | undefined>;
 }
 
-function Service({ id }: ServiceProps) {
+function Service({ params }: PageProps) {
+  const id = params?.id;
   return (
     <div>
       <div id={id}>

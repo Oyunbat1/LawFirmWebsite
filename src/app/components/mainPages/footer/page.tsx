@@ -15,7 +15,7 @@ function Footer() {
             alt="logo"
             className="cursor-pointer"
           />
-          <p className="w-[240px] text-[16px] lg:text-[18px]">
+          <p className="w-[240px] text-[14px] lg:text-[16px] ">
             Бид таны эрхийг хамгаалж, үнэнийг тогтоохын төлөө хамт зогсох болно.
           </p>
         </div>
@@ -26,7 +26,7 @@ function Footer() {
           <div className="flex flex-col gap-3 xl:gap-6 ">
             <h1 className="h-[16px] lg:text-[18px] font-[600]">Нүүр хуудас</h1>
             <div
-              className="flex flex-col gap-1 xl:gap-3 font-[400] text-[16px] lg:text-[18px] xl:py-[6px]
+              className="flex flex-col gap-1 xl:gap-3 font-[400] text-[14px] lg:text-[16px]  xl:py-[6px]
 "
             >
               <p>Үндсэн хууль</p>
@@ -37,7 +37,7 @@ function Footer() {
           </div>
           <div className="flex flex-col gap-3  xl:gap-6">
             <h1 className="h-[16px] lg:text-[18px] font-[600]">Холбоо барих</h1>
-            <div className="flex flex-col gap-1 xl:gap-3 font-[400] text-[16px] lg:text-[18px] xl:py-[6px]">
+            <div className="flex flex-col gap-1 xl:gap-3 font-[400] text-[14px] lg:text-[16px] xl:py-[6px]">
               <p>Instagram</p>
               <p>Facebook</p>
               <p>Gmail</p>
