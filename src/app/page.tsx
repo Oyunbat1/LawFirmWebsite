@@ -16,12 +16,12 @@ export default function Home() {
     <>
       <CursorMaskWrapper showMask={showMask}>
         <HomePage setMaskEnabled={setShowMask} />
-        <Section2 />
-        <Service id="service" />
-        <Section4 />
+        <Section2 id="section2" />
+        <Service id="services" />
+        <Section4 id="section4" />
         <Employee id="employees" />
         <Question />
-        <Footer />
+        <Footer id="footer" />
       </CursorMaskWrapper>
     </>
   );

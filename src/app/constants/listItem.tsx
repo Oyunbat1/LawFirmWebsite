@@ -7,13 +7,13 @@ export const ListItems: ListItemsProps[] = [
       { id: 1, name: "hello" },
       { id: 2, name: "bye" },
     ],
-    navigation: "/service",
+    navigation: "#service",
   },
   {
     id: 2,
     name: "Бидний тухай",
     items: [],
-    navigation: "/components/mainPages/employees",
+    navigation: "#employees",
   },
   {
     id: 4,
@@ -22,6 +22,6 @@ export const ListItems: ListItemsProps[] = [
       { id: 1, name: "a" },
       { id: 2, name: "b" },
     ],
-    navigation: "/components/mainPages/footer",
+    navigation: "#footer",
   },
 ];

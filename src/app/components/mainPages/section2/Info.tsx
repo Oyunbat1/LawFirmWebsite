@@ -1,9 +1,12 @@
 "use client";
 import React from "react";
 import { useScroll, motion, easeInOut } from "framer-motion";
-function Info() {
+function Info({ id }: any) {
   return (
-    <div className="h-[500px] pt-[100px] pb-[60px] w-screen border-t-gray-400 border-t-2 flex flex-col gap-[40px] items-center justify-center">
+    <div
+      id={id}
+      className="h-[500px] pt-[100px] pb-[60px] w-screen border-t-gray-400 border-t-2 flex flex-col gap-[40px] items-center justify-center"
+    >
       <motion.h1
         initial={{ y: -20, opacity: 0 }}
         transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
