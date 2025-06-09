@@ -1,12 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { sectionThreeData } from "@/app/constants/serviceItems";
 import { filteredItems } from "@/app/constants/filterItems";
-import Employee from "@/app/components/mainPages/employees/Employee";
 import { useParams } from "next/navigation";
-import Footer from "@/app/components/mainPages/footer/Footer";
+import Footer from "@/app/components/mainPages/footer/page";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Page() {

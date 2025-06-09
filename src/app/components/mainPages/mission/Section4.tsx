@@ -9,7 +9,7 @@ function Section4() {
         <h1 className="w-[337px] h-[45px] text-[24px] font-[700] text-center md:text-[34px] md:w-[537px] xl:text-[60px] xl:w-screen">
           Бидний эрхэм зорилго
         </h1>
-        <p className="text-black w-[358px] h-[42px] text-[12px] font-[400] md:w-[537px] md:text-[18px] xl:w-[1000px] xl:text-[20px]">
+        <p className="text-black w-[358px] h-[42px] text-[12px] font-[400] md:w-[537px] md:text-[18px] xl:w-[1000px] xl:text-[22px] pb-[80px]">
           Монгол Улсад засгийн бүх эрх ард түмний мэдэлд байна. Монголын ард
           түмэн төрийн үйл хэрэгт шууд оролцож, мөн сонгож байгуулсан төрийн эрх
           барих төлөөлөгчдийн байгууллагаараа уламжлан энэхүү эрхээ эдэлнэ.

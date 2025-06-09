@@ -8,8 +8,8 @@ function Employee({ id }: EmployeeProps) {
   return (
     <div id={id}>
       <div
-        className="bg-gray-200 h-auto w-screen px-[40px] flex flex-col items-center justify-center gap-8 pb-[120px]
-    pt-[20px]"
+        className="bg-gray-100 h-auto w-screen px-[40px] flex flex-col items-center justify-center gap-8 pb-[120px] pt-[180px]
+      "
       >
         <div className="flex flex-col items-center justify-center gap-2">
           <h1 className="font-[700] text-[18px] md:text-[34px] xl:text-[52px]">
@@ -30,7 +30,7 @@ function Employee({ id }: EmployeeProps) {
             <Instagram></Instagram>
             <Facebook></Facebook>
           </div>
-          <Button className=" border-1 border-[#ad935c] text-[#ad935c] hover:bg-[#ad935c]">
+          <Button className=" border-1 bg-[#BEA673] hover:bg-[#ad935c]  text-white cursor-pointer">
             Холбоо барих
           </Button>
         </div>

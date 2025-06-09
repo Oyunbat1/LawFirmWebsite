@@ -66,7 +66,7 @@ function Question() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col items-center justify-center py-12 px-8 sm:px-6 lg:px-8">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center py-12 px-8 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ function Question() {
               >
                 <motion.h2
                   layout="position"
-                  className="text-lg sm:text-xl font-semibold text-gray-800"
+                  className="text-[16px] sm:text-[16px] lg:text-[22px] font-semibold text-gray-800"
                 >
                   {question.title}
                 </motion.h2>

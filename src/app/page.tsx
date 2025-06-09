@@ -2,10 +2,10 @@
 import { useState } from "react";
 import HomePage from "./homepage/HomePage";
 import Section2 from "./components/mainPages/section2/Info";
-import Service from "./service/Service";
-import Section4 from "./components/mainPages/section4/Section4";
-import Employee from "./components/mainPages/employees/Employee";
-import Footer from "./components/mainPages/footer/Footer";
+import Service from "./service/page";
+import Section4 from "./components/mainPages/mission/Section4";
+import Employee from "./components/mainPages/employees/page";
+import Footer from "./components/mainPages/footer/page";
 import Question from "./components/mainPages/questions/Question";
 import CursorMaskWrapper from "./components/CursorWrapper";
 
