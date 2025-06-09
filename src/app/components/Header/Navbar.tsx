@@ -54,7 +54,7 @@ function Navbar() {
             <SheetTrigger>
               <Menu className="cursor-pointer text-black" />
             </SheetTrigger>
-            <SheetContent className="flex justify-start items-center pt-[120px] bg-gray-100/30">
+            <SheetContent className="flex justify-start items-center pt-[120px] bg-white/65 backdrop-blur-md ">
               {ListItems.map((item) => (
                 <div
                   key={item.id}

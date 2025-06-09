@@ -18,7 +18,7 @@ export default function Page() {
   }, [selectedId]);
 
   return (
-    <div className="min-h-screen w-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen w-screen flex flex-col pb-[140px]">
       <div className="w-screen pt-[100px] flex flex-col gap-6 lg:flex-row lg:gap-8 lg:justify-center px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function Page() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="bg-white shadow-lg rounded-xl w-full max-w-4xl p-6 lg:p-8"
+              className="bg-white shadow-lg rounded-xl w-full max-w-4xl p-6 lg:p-8 pb-[40px]"
             >
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col gap-4">

@@ -5,14 +5,7 @@ import Link from "next/link";
 import { sectionThreeData } from "../constants/serviceItems";
 import ServiceComponents from "./serviceComponents/ServiceComponents";
 
-interface PageProps {
-  params?: {
-    id?: string;
-  };
-  searchParams?: Record<string, string | string[] | undefined>;
-}
-
-function Service({ params }: PageProps) {
+function Service({ params }: any) {
   const id = params?.id;
   return (
     <div>

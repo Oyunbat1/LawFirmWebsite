@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 function Footer() {
   return (
-    <div className="w-screen h-[300px] pt-[220px] pb-[220px] flex flex-col items-center justify-center border-t-2 border-t-slate-200 p-[40px] gap-[40px] ">
+    <div className="w-screen h-[300px] pt-[260px] pb-[220px] flex flex-col items-center justify-center  p-[40px] gap-[40px] ">
       <div
         className="  h-auto w-full flex flex-col  gap-2.5  mt-[140px] sm:flex-row sm:justify-around xl:justify-between xl:px-[40px]
 "
@@ -13,7 +13,7 @@ function Footer() {
             width={186}
             height={186}
             alt="logo"
-            className="cursor-pointer"
+            className="cursor-pointer w-[146px] lg:w-[186px]"
           />
           <p className="w-[240px] text-[14px] lg:text-[16px] ">
             Бид таны эрхийг хамгаалж, үнэнийг тогтоохын төлөө хамт зогсох болно.
@@ -45,9 +45,9 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="pb-[20px] flex flex-col justify-center gap-[60px]  h-auto w-full sm:flex-row sm:justify-around  xl:justify-between xl:px-[40px] xl:mr-[40px]">
+      <div className="pb-[20px] flex flex-col justify-center gap-[30px]  h-auto w-full sm:flex-row sm:justify-around  xl:justify-between xl:px-[40px] xl:mr-[40px]">
         <p className="xl:pl-[40px]">@2025 ...</p>
-        <div className="flex gap-2 justify-center">
+        <div className="flex gap-3 justify-center text-[12px]">
           <p>Нууцлалын бодлого</p>
           <p>Үйлчилгээний нөхцөл</p>
         </div>{" "}
