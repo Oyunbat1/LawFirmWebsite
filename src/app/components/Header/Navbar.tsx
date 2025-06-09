@@ -48,7 +48,8 @@ function Navbar() {
             width={86}
             height={86}
             alt="logo"
-            className="cursor-pointer"
+            onClick={handleToMainPage}
+            className="text-white"
           />
           <Sheet>
             <SheetTrigger>
