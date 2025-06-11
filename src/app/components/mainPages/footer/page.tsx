@@ -3,6 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 function Footer({ id }: any) {
+  const handleEmailClick = () => {
+    window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=sainkanzlei@gmail.com",
+      "_blank"
+    );
+  };
   return (
     <div
       id={id}
@@ -74,12 +80,13 @@ function Footer({ id }: any) {
               >
                 Facebook
               </Link>
-              <Link
-                href="mailto:yourlawfirm@gmail.com"
+              <p
                 className="hover:text-blue-500 transition-colors"
+                onClick={handleEmailClick}
               >
+                {" "}
                 Gmail
-              </Link>
+              </p>
             </div>
           </div>
         </div>

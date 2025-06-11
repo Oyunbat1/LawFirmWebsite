@@ -94,7 +94,7 @@ function Question() {
               >
                 <motion.h2
                   layout="position"
-                  className="text-[16px] sm:text-[16px] lg:text-[22px] font-semibold text-gray-800"
+                  className="text-[16px] sm:text-[16px] lg:text-[18px] font-semibold text-gray-800"
                 >
                   {question.title}
                 </motion.h2>

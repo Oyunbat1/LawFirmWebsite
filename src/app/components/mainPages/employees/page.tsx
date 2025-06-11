@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Linkedin, Twitter, Instagram, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-
+import Link from "next/link";
 function Employee({ id }: any) {
   return (
     <div id={id}>
@@ -24,7 +24,7 @@ function Employee({ id }: any) {
         <div className="flex flex-col gap-2">
           {" "}
           <Image
-            src="/oyunbat.jpg"
+            src="/employees/bujin.webp"
             width={100}
             height={100}
             alt="logo"
@@ -75,8 +75,16 @@ function Employee({ id }: any) {
                 </a>
               </motion.div>
             </div>
-            <Button className="mt-[20px] border-1 bg-[#BEA673] hover:bg-[#ad935c]  text-white cursor-pointer">
-              Холбоо барих
+            <Button
+              asChild
+              className="mt-[20px] border-1 bg-[#BEA673] hover:bg-[#ad935c] text-white cursor-pointer"
+            >
+              <a
+                href="mailto:oyunbat9958@gmail.com?subject=Холбоо барих"
+                rel="noopener noreferrer"
+              >
+                Холбоо барих
+              </a>
             </Button>
           </div>
         </div>

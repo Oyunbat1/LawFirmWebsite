@@ -11,11 +11,18 @@ import useIsInView from "@/app/utils/useIsInView";
 interface HomePageProps {
   setMaskEnabled: (val: boolean) => void;
 }
+const handleEmailClick = () => {
+  window.open(
+    "https://mail.google.com/mail/?view=cm&fs=1&to=sainkanzlei@gmail.com",
+    "_blank"
+  );
+};
 
 function HomePage({ setMaskEnabled }: HomePageProps) {
   const { x, y } = useMousePosition();
   const [isHovered, setIsHovered] = useState(false);
   const size = isHovered ? 200 : 20;
+
   const MotionImage = motion(Image);
 
   const { ref, isInView } = useIsInView();
@@ -77,7 +84,10 @@ function HomePage({ setMaskEnabled }: HomePageProps) {
       </div>
 
       <div className="absolute top-[200px] z-30 left-1/2 transform -translate-x-36 translate-y-16 sm:top-[290px] sm:-translate-x-68 md:-translate-x-95 md:top-[266px] lg:top-[366px] lg:-translate-x-103 xl:top-[396px] xl:-translate-x-144">
-        <Button className="w-[137px] h-[44px] xl:w-[228px] xl:h-[56px] lg:w-[228px] lg:h-[56px] bg-[#BEA673] hover:bg-[#ad935c]  text-white cursor-pointer">
+        <Button
+          onClick={handleEmailClick}
+          className="w-[137px] h-[44px] xl:w-[228px] xl:h-[56px] lg:w-[228px] lg:h-[56px] bg-[#BEA673] hover:bg-[#ad935c] text-white cursor-pointer"
+        >
           Холбогдох <ChevronRight className="text-white" />
         </Button>
       </div>

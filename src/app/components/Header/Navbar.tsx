@@ -18,6 +18,13 @@ function Navbar() {
   const handleToMainPage = () => {
     router.push("/");
   };
+  const handleEmailClick = () => {
+    window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=sainkanzlei@gmail.com",
+      "_blank"
+    );
+  };
+
   const handleScroll = () => {
     setScrolled(window.scrollY > 20);
   };
@@ -145,12 +152,13 @@ function Navbar() {
                 <Instagram className="w-[18px]" />
               </a>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
+            <motion.div
+              onClick={handleEmailClick}
+              whileHover={{ scale: 1.5 }}
+              whileTap={{ scale: 0.95 }}
+            >
               {" "}
-              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">
-                {" "}
-                <Mail className="w-[18px]" />
-              </a>
+              <Mail className="w-[18px]" />
             </motion.div>
           </div>
         </motion.div>
