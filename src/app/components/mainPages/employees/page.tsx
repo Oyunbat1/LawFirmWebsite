@@ -28,7 +28,7 @@ function Employee({ id }: any) {
             width={100}
             height={100}
             alt="logo"
-            className="cursor-pointer rounded-md w-[200px] md:w-[220px] lg:w-[250px] transform  hover:-translate-y-3"
+            className="cursor-pointer rounded-md w-[200px] md:w-[220px] lg:w-[250px] transform  hover:-translate-y-3 transition-all duration-500 ease-in-out"
           />
           <div className="flex flex-col gap-1 lg:gap-2 items-center">
             <h1 className=" md:text-[20px] xl:text-[28px] font-[600]">Нэр</h1>
