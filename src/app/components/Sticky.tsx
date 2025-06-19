@@ -33,7 +33,7 @@ function Sticky() {
                 </a>
 
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/sainkanzlei/?igsh=cDBhbDVla2dsdHUy&utm_source=qr#"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

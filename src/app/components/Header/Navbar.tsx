@@ -147,7 +147,7 @@ function Navbar() {
             </motion.div>
             <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.95 }}>
               {" "}
-              <a href="https://www.instagram.com/">
+              <a href="https://www.instagram.com/sainkanzlei/?igsh=cDBhbDVla2dsdHUy&utm_source=qr#">
                 {" "}
                 <Instagram className="w-[18px]" />
               </a>

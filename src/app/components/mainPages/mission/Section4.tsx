@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-
+import { motion } from "framer-motion";
 function Section4({ id }: any) {
   return (
     <div
@@ -9,16 +9,34 @@ function Section4({ id }: any) {
       className="w-screen h-auto flex flex-col items-center justify-center gap-10 md:gap-16 pb-[80px]  s"
     >
       <div className="flex flex-col xl:gap-18 gap-4 xl:justify-center xl:items-center">
-        <h1 className="w-[337px] h-[45px] text-[24px] font-[700] text-center md:text-[34px] md:w-[537px] xl:text-[42px] xl:w-screen">
+        <motion.h1
+          initial={{ opacity: 0, x: 100 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="w-[337px] h-[45px] text-[24px] font-[700] text-center md:text-[34px] md:w-[537px] xl:text-[42px] xl:w-screen"
+        >
           Бидний эрхэм зорилго
-        </h1>
-        <p className="text-black w-[358px] h-[42px] text-[12px] font-[400] md:w-[537px] md:text-[18px] xl:w-[1000px] xl:text-[22px] pb-[80px]">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: -100 }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          className="text-black w-[358px] h-[42px] text-[12px] font-[400] md:w-[537px] md:text-[18px] xl:w-[1000px] xl:text-[22px] pb-[80px]"
+        >
           Монгол Улсад засгийн бүх эрх ард түмний мэдэлд байна. Монголын ард
           түмэн төрийн үйл хэрэгт шууд оролцож, мөн сонгож байгуулсан төрийн эрх
           барих төлөөлөгчдийн байгууллагаараа уламжлан энэхүү эрхээ эдэлнэ.
-        </p>
+        </motion.p>
       </div>
-      <div className="flex flex-col gap-4 md:flex-row ">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        transition={{ duration: 1, delay: 0.4, ease: "easeInOut" }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        className="flex flex-col gap-4 md:flex-row "
+      >
         <div className="flex gap-4">
           <div className=" flex justify-center items-center relative group overflow-hidden ">
             {" "}
@@ -71,7 +89,7 @@ function Section4({ id }: any) {
           </div>
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-60 transition-opacity duration-300 z-10"></div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +13,7 @@ function Footer({ id }: any) {
   return (
     <div
       id={id}
-      className="w-screen h-[300px] pt-[260px] pb-[120px] flex flex-col items-center justify-center p-[40px] gap-[40px]"
+      className="w-screen h-[300px] pt-[100px] pb-[120px] flex flex-col items-center justify-center p-[40px] gap-[40px]"
     >
       <div className="h-auto w-full flex flex-col gap-2.5 mt-[140px] sm:flex-row sm:justify-around xl:justify-between xl:px-[40px]">
         <div className="flex flex-col gap-4 xl:gap-8">
@@ -65,7 +66,7 @@ function Footer({ id }: any) {
             <h1 className="h-[16px] lg:text-[18px] font-[600]">Холбоо барих</h1>
             <div className="flex flex-col gap-1 xl:gap-3 font-[400] text-[14px] lg:text-[16px] xl:py-[6px]">
               <Link
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/sainkanzlei/?igsh=cDBhbDVla2dsdHUy&utm_source=qr#"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-500 transition-colors"
@@ -92,7 +93,9 @@ function Footer({ id }: any) {
         </div>
       </div>
       <div className="pb-[20px] flex flex-col justify-center gap-[30px] h-auto w-full sm:flex-row sm:justify-around xl:justify-between xl:px-[40px] xl:mr-[40px]">
-        <p className="xl:pl-[40px]">@2025 ...</p>
+        <p className="xl:pl-[40px] text-[12px]">
+          Бүх эрх хуулиар хамгаалагдсан @2025. "Sain Kanzlai LLP"
+        </p>
         <div className="flex gap-3 justify-center text-[12px]">
           <p>Нууцлалын бодлого</p>
           <p>Үйлчилгээний нөхцөл</p>
