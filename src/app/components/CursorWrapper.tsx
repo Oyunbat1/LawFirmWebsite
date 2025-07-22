@@ -13,7 +13,7 @@ interface Props {
 const CursorMaskWrapper = ({ children, showMask = true }: Props) => {
   const { x, y } = useMousePosition();
 
-  const size = 20;
+  const size = 10;
 
   return (
     <div className="relative w-screen">
