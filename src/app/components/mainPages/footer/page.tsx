@@ -13,7 +13,7 @@ function Footer({ id }: any) {
   return (
     <div
       id={id}
-      className="w-screen h-[300px] pt-[100px] pb-[120px] flex flex-col items-center justify-center p-[40px] gap-[40px]"
+      className="w-screen h-[300px] mt-[40px] pt-[100px] pb-[140px] flex flex-col items-center justify-center p-[40px] gap-[40px] "
     >
       <div className="h-auto w-full flex flex-col gap-2.5 mt-[140px] sm:flex-row sm:justify-around xl:justify-between xl:px-[40px]">
         <div className="flex flex-col gap-4 xl:gap-8">

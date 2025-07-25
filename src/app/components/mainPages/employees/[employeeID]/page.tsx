@@ -6,12 +6,12 @@ import Image from "next/image";
 import Footer from "../../footer/page";
 import { useSearchParams } from "next/navigation";
 import { useMediaQuery } from "react-responsive";
-import { desc } from "framer-motion/client";
+import { PhoneIcon, CheckCircleIcon, MailOpen } from "lucide-react";
+import { sep } from "path";
+
 const employeeIntroduction = [
   {
     id: 1,
-    title:
-      "Танилцуулга: Б.Ужинлхам",
     content_1: [
       {
         id: 1,
@@ -19,9 +19,9 @@ const employeeIntroduction = [
         first_sec: [
           {
             id: 1,
-            first:
+            title_1:
               "Мартин-Лутер-Их сургууль Халле / Виттенберг Суралцсан чиглэл: Хууль, эрх зүй",
-            description: [
+            description1: [
               {
                 id: 1,
                 desc: "боловсролын зэрэг: Герман Улсаас баталгаажсан диплом хуульч (улсын шалгалт) "
@@ -38,9 +38,9 @@ const employeeIntroduction = [
           },
           {
             id: 2,
-            second:
+            title_2:
               "Мартин-Лутер-Их сургуулийн Халле / Виттенберг коллеж",
-            description: [
+            description_2: [
               {
                 id: 1,
                 desc: "Их сургуульд суралцах чадвартай болохыг тодорхойлсон гэрчилгээ   "
@@ -49,8 +49,8 @@ const employeeIntroduction = [
           },
           {
             id: 3,
-            third: "Буриадын их сургууль / Улаанбаатар хот ",
-            description: [
+            title_3: "Буриадын их сургууль / Улаанбаатар хот ",
+            description_3: [
               {
                 id: 1,
                 desc: "Суралцсан чиглэл: Хууль, эрх зүй "
@@ -68,7 +68,7 @@ const employeeIntroduction = [
           id: 1,
           first:
             "Хууль зүйн үндэсний хүрээлэн",
-          description: [
+          description_1: [
             {
               id: 1,
               desc: "Эрдэм шинжилгээний ажилтан, бодлогын судлаач "
@@ -79,7 +79,7 @@ const employeeIntroduction = [
           id: 2,
           second:
             "АПУ ХК",
-          description: [
+          description_2: [
             {
               id: 1,
               desc: "Дотоод Аудитор"
@@ -89,7 +89,7 @@ const employeeIntroduction = [
           id: 3,
           third:
             "Kосмополитан ХМХ ",
-          description: [
+          description_3: [
             {
               id: 1,
               desc: "Захиргааны менежер"
@@ -100,7 +100,7 @@ const employeeIntroduction = [
           id: 4,
           fourth:
             "Герман- Монголын Бизнес Эхалэгчдийн Холбоо",
-          description: [
+          description_4: [
             {
               id: 1,
               desc: "Уул, уурхайн төсөл хариуцсан менежер  "
@@ -111,7 +111,7 @@ const employeeIntroduction = [
           id: 5,
           fifth:
             "Ханнс Зайделийн Сан",
-          description: [
+          description_5: [
             {
               id: 1,
               desc: "Хуулийн төсөл хариуцсан менежер"
@@ -135,90 +135,250 @@ function page() {
     lastname: searchParams.get('lastname'),
     img_url: searchParams.get('img_url')
   };
-  console.log(employee);
-  useEffect(() => {
 
+  useEffect(() => {
     setIsMobile(isMobileQuery);
   }, [isMobileQuery]);
+
   const id = Number(employeeID);
-  const selectedEmployeeID = employeeIntroduction.find(
-    (item) => item.id === id
-  );
-  return (
-    <>{isMobile && (
-      <div>
-        <div className="h-screen flex  items-center justify-center ">
-          <div className="bg-slate-100 w-[1200px] h-auto flex flex-col items-start justify-center p-10 mt-[60px] gap-4">
-            <div className="flex flex-col gap-2">
-              <Image src={employee.img_url ?? "/default-image.png"} alt="image" width={100} height={100} className="w-[500px] h-[140px]"></Image>
-              <div className="w-full h-auto bg-slate-400  flex flex-col items-start justify-between p-[20px] text-white">
-                <div className="flex flex-col gap-6">
-                  <div>    <h1 className="text-[24px]">{employee.lastname?.slice(0, 1)}.{employee.firstname}</h1>
-                    <hr className="w-[300px]  mt-[4px]" /></div>
-                  <div className="flex flex-col gap-2">
-                    <p className="text-[16px] font-bold text-black">Албан тушаал:</p>
-                    <p className="text-[16px]">Хуульч</p>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <p className="text-[16px] font-bold text-black">Холбогдох:</p>
-                    <p className="text-[16px]">Утас: 99053310</p>
-                    <p className="text-[16px]">И-мэйл: bujinlkham-s@hss.de</p>
-                  </div>
-                </div>
+  const selectedEmployeeID = employeeIntroduction.find((item) => item.id === id);
 
-              </div>
-              <div className="w-full h-auto bg-slate-400  flex flex-col items-start  p-[20px] text-white">
-                <div className="flex flex-col gap-6">
-                  <div className="flex flex-col gap-2">
-                    <p className="text-[16px] font-bold text-black">Мэргэшсэн салбар:</p>
-                    <div className="flex flex-col gap-2 pl-2"> <p className="text-[16px]">Иргэний хэрэг</p>
-                      <p className="text-[16px]">Захиргааны хэрэг</p>
-                      <p className="text-[16px]">Оюуны өмч</p>
-                      <p className="text-[16px]">Хөдлөх болон үл хөдлөх эд хөрөнгө</p>
-                      <p className="text-[16px]">Уул уурхай байгалын нөөц эрчим хүч</p></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-red-200 w-full h-auto border-l border-l-slate-400 pl-2">s</div>
-          </div>
-
-        </div>
-        <Footer />
+  // Common profile section component
+  const ProfileSection = () => (
+    <div className="flex flex-col gap-4 w-full">
+      <div className="relative w-full h-48 overflow-hidden rounded-lg">
+        <Image
+          src={employee.img_url ?? "/default-image.png"}
+          alt={`${employee.firstname} ${employee.lastname}`}
+          fill
+          className="object-cover"
+        />
       </div>
-    )}
-      {!isMobile && (
-        <div>
-          <div className="h-screen flex items-center justify-center">
-            <div className="bg-slate-100 w-[1200px] h-[500px] flex items-center justify-center p-10 mt-[60px] relative">
-              <Image src={employee.img_url ?? "/default-image.png"} alt="image" width={100} height={100} className="w-[500px] h-[400px]"></Image>
-              <div className="h-full w-[300px] bg-slate-200 absolute left-0 flex flex-col items-center justify-between">
-                <div className="flex flex-col"><h1>{employee.lastname?.slice(0, 1)}.{employee.firstname}</h1>
-                  <hr />
-                  <p>Албан тушаал:</p>
 
-                </div>
-                <div>a</div>
-              </div>
-              <div className="h-full w-[300px] bg-slate-200 absolute right-0">a</div>
-            </div>
-            {/* <div>
-          <h1> {selectedEmployeeID?.title}</h1>
-          <div>
-            {selectedEmployeeID?.content.map((el) =>
-              el.first_sec.map((item) => (
-                <div key={el.id}>
-                  <p className="text-red-400">{item.first}</p>
-                </div>
-              ))
-            )}
+      <div className="bg-gray-100 rounded-lg p-6 shadow-sm">
+        <div className="flex flex-col gap-4">
+          <div className="border-b border-gray-200 pb-4">
+            <h1 className="text-2xl font-bold text-gray-800">
+              {employee.lastname?.slice(0, 1)}.{employee.firstname}
+            </h1>
+            <p className="text-gray-500 mt-1">Хуульч</p>
           </div>
-        </div> */}
+
+          <div className="space-y-2">
+            <h2 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+              Албан тушаал
+            </h2>
+            <p className="text-gray-600">Хуульч</p>
+          </div>
+
+          <div className="space-y-2">
+            <h2 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+              Холбогдох
+            </h2>
+            <div className="space-y-1 text-gray-600">
+              <p className="flex items-center gap-2">
+                <PhoneIcon className="h-4 w-4 text-gray-400" />
+                Утас: 99053310
+              </p>
+              <p className="flex items-center gap-2">
+                <MailOpen className="h-4 w-4 text-gray-400" />
+                И-мэйл: bujinlkham-s@hss.de
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-gray-100 rounded-lg p-6 shadow-sm">
+        <div className="space-y-4">
+          <h2 className="text-sm font-semibold text-gray-700 uppercase tracking-wider">
+            Мэргэшсэн салбар
+          </h2>
+          <ul className="space-y-2 text-gray-600">
+            <li className="flex items-start gap-2">
+              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+              Иргэний хэрэг
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+              Захиргааны хэрэг
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+              Оюуны өмч
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+              Хөдлөх болон үл хөдлөх эд хөрөнгө
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+              Уул уурхай байгалын нөөц эрчим хүч
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+
+  // Common introduction section component
+  const IntroductionSection = () => (
+    <div className="w-full h-auto border-l-2 border-l-slate-400 pl-4 py-4">
+      <h1 className="text-xl font-semibold mb-4">Танилцуулга</h1>
+      <div className="space-y-6">
+        {selectedEmployeeID?.content_1.map((section) => (
+          <div key={section.id} className="space-y-4">
+            <h2 className="text-lg font-medium text-gray-800">{section.first_sec_title}</h2>
+            <div className="space-y-4 pl-2">
+              {section.first_sec.map((item) => (
+                <div key={item.id} className="space-y-2">
+                  {item.title_1 && (
+                    <h3 className="text-base font-medium text-gray-700">{item.title_1}</h3>
+                  )}
+                  {item.description1 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description1.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.title_2 && (
+                    <h3 className="text-base font-medium text-gray-700">{item.title_2}</h3>
+                  )}
+                  {item.description_2 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description_2.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.title_3 && (
+                    <h3 className="text-base font-medium text-gray-700">{item.title_3}</h3>
+                  )}
+                  {item.description_3 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description_3.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="space-y-6 mt-4">
+        {selectedEmployeeID?.content_2.map((section) =>
+          <div key={section.id} className="space-y-4">
+            <h2 className="text-lg font-medium text-gray-800">{section.first_sec_title}</h2>
+            <div className="space-y-4 pl-2">
+              {section.first_sec.map((item) => (
+                <div key={item.id} className="space-y-2">
+                  {item.first && (
+                    <h3 className="text-base font-medium text-gray-700">{item.first}</h3>
+                  )}
+                  {item.description_1 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description_1.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.second && (
+                    <h3 className="text-base font-medium text-gray-700">{item.second}</h3>
+                  )}
+                  {item.description_2 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description_2.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.third && (
+                    <h3 className="text-base font-medium text-gray-700">{item.third}</h3>
+                  )}
+                  {item.description_3 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description_3.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.fourth && (
+                    <h3 className="text-base font-medium text-gray-700">{item.fourth}</h3>
+                  )}
+                  {item.description_4 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description_4.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.fifth && (
+                    <h3 className="text-base font-medium text-gray-700">{item.fifth}</h3>
+                  )}
+                  {item.description_5 && (
+                    <ul className="list-disc pl-5 space-y-1">
+                      {item.description_5.map((desc) => (
+                        <li key={desc.id} className="text-gray-600">
+                          {desc.desc}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+              ))}
+            </div>
+          </div>)}
+
+      </div>
+    </div>
+  );
+
+  return (
+    <>
+      {isMobile ? (
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-1 flex items-center justify-center p-4">
+            <div className="bg-slate-100 w-full max-w-4xl h-auto flex flex-col items-start justify-center p-6 md:p-10 mt-[60px] gap-6 rounded-lg">
+              <ProfileSection />
+              <IntroductionSection />
+            </div>
           </div>
           <Footer />
         </div>
-      )}</>
-
+      ) : (
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-1 flex items-center justify-center p-4">
+            <div className="bg-slate-100 w-full max-w-6xl h-auto flex items-stretch p-10 mt-[60px] gap-8 rounded-lg">
+              <div className="w-1/3 flex flex-col gap-6">
+                <ProfileSection />
+              </div>
+              <div className="w-2/3">
+                <IntroductionSection />
+              </div>
+            </div>
+          </div>
+          <Footer />
+        </div>
+      )}
+    </>
   );
 }
 
